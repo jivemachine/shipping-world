@@ -12,8 +12,8 @@ return [
 
     // In the future you can toggle carriers, etc.
     'carriers' => [
-        'ups'   => true,
-        'usps'  => true,
+        'ups' => true,
+        'usps' => true,
         'fedex' => true,
     ],
 ];

@@ -8,6 +8,7 @@ use jivemachine\ShippingWorld\Database\Seeders\ShippingWorldSeeder;
 class InstallShippingWorldCommand extends Command
 {
     protected $signature = 'shipping-world:install';
+
     protected $description = 'Install and seed carrier-ready data using nnjeim/world';
 
     public function handle(): int
@@ -16,6 +17,7 @@ class InstallShippingWorldCommand extends Command
         if (! class_exists(\Nnjeim\World\Models\Country::class)) {
             $this->error('nnjeim/world is not installed or configured.');
             $this->line('Please install and run its migrations & seeders first.');
+
             return self::FAILURE;
         }
 

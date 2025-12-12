@@ -3,10 +3,10 @@
 namespace jivemachine\ShippingWorld\Database\Seeders;
 
 use Illuminate\Database\Seeder;
-use Nnjeim\World\Models\Country;
-use Nnjeim\World\Models\State;
 use jivemachine\ShippingWorld\Models\CarrierCountry;
 use jivemachine\ShippingWorld\Models\CarrierRegion;
+use Nnjeim\World\Models\Country;
+use Nnjeim\World\Models\State;
 
 class ShippingWorldSeeder extends Seeder
 {
@@ -21,16 +21,16 @@ class ShippingWorldSeeder extends Seeder
                     [
                         'iso_alpha2' => $country->iso2,
                         'iso_alpha3' => $country->iso3,
-                        'name'       => $country->name,
+                        'name' => $country->name,
 
                         // v0.1: naive defaults, refine later
                         'is_shipping_supported' => true,
-                        'supports_ups'          => true,
-                        'supports_usps'         => true,
-                        'supports_fedex'        => true,
-                        'requires_postcode'     => true,
-                        'requires_region'       => in_array($country->iso2, ['US', 'CA', 'AU']),
-                        'region_label'          => $this->regionLabelForCountry($country->iso2),
+                        'supports_ups' => true,
+                        'supports_usps' => true,
+                        'supports_fedex' => true,
+                        'requires_postcode' => true,
+                        'requires_region' => in_array($country->iso2, ['US', 'CA', 'AU']),
+                        'region_label' => $this->regionLabelForCountry($country->iso2),
                     ]
                 );
 
@@ -44,13 +44,13 @@ class ShippingWorldSeeder extends Seeder
                         CarrierRegion::updateOrCreate(
                             [
                                 'carrier_country_id' => $carrierCountry->id,
-                                'world_state_id'     => $state->id,
+                                'world_state_id' => $state->id,
                             ],
                             [
                                 'iso_subdivision_code' => $state->iso2 ?? null, // adjust if different
-                                'code'                 => $state->iso2 ?? null,
-                                'name'                 => $state->name,
-                                'is_active'            => true,
+                                'code' => $state->iso2 ?? null,
+                                'name' => $state->name,
+                                'is_active' => true,
                             ]
                         );
                     }

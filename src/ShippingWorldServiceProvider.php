@@ -2,9 +2,9 @@
 
 namespace jivemachine\ShippingWorld;
 
+use jivemachine\ShippingWorld\Commands\InstallShippingWorldCommand;
 use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
-use jivemachine\ShippingWorld\Commands\InstallShippingWorldCommand;
 
 class ShippingWorldServiceProvider extends PackageServiceProvider
 {
@@ -25,7 +25,7 @@ class ShippingWorldServiceProvider extends PackageServiceProvider
     public function registeringPackage()
     {
         $this->app->singleton('shipping-world', function () {
-            return new \jivemachine\ShippingWorld\ShippingWorld();
+            return new \jivemachine\ShippingWorld\ShippingWorld;
         });
     }
 }
