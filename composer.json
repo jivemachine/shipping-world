@@ -1,23 +1,26 @@
 {
-    "name": ":vendor_slug/:package_slug",
-    "description": ":package_description",
+    "name": "jivemachine/shipping-world",
+    "description": "Carrier-ready country & region data built on nnjeim/world",
     "keywords": [
-        ":vendor_name",
+        "jivemachine",
         "laravel",
-        ":package_slug"
+        "shipping-world"
     ],
-    "homepage": "https://github.com/:vendor_slug/:package_slug",
+    "type": "library",
+    "homepage": "https://github.com/jivemachine/shipping-world",
     "license": "MIT",
     "authors": [
         {
-            "name": ":author_name",
-            "email": "author@domain.com",
+            "name": "Jeremy Cobb",
+            "email": "the.jeremy.cobb@gmail.com",
             "role": "Developer"
         }
     ],
     "require": {
-        "php": "^8.4",
+        "php": "^8.2",
+        "laravel/framework": "^11.0",
         "spatie/laravel-package-tools": "^1.16",
+        "nnjeim/world": "^1.1",
         "illuminate/contracts": "^11.0||^12.0"
     },
     "require-dev": {
@@ -35,8 +38,8 @@
     },
     "autoload": {
         "psr-4": {
-            "VendorName\\Skeleton\\": "src/",
-            "VendorName\\Skeleton\\Database\\Factories\\": "database/factories/"
+            "jivemachine\\ShippingWorld\\": "src/",
+            "jivemachine\\ShippingWorld\\Database\\": "database/"
         }
     },
     "autoload-dev": {
@@ -63,10 +66,10 @@
     "extra": {
         "laravel": {
             "providers": [
-                "VendorName\\Skeleton\\SkeletonServiceProvider"
+                "jivemachine\\ShippingWorld\\ShippingWorldServiceProvider"
             ],
             "aliases": {
-                "Skeleton": "VendorName\\Skeleton\\Facades\\Skeleton"
+                "ShippingWorld": "jivemachine\\ShippingWorld\\Facades\\ShippingWorld"
             }
         }
     },
